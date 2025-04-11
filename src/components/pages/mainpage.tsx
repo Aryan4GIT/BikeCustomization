@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 
 export const MainPage: React.FC = () => {
   const navigate = useNavigate();
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-gray-100 via-white to-gray-50 text-gray-800">
