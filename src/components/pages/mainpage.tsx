@@ -26,7 +26,7 @@ export const MainPage: React.FC = () => {
           <Button
             variant="outline"
             className="ml-4 text-sm"
-            onClick={() => navigate('/login')}
+            onClick={() => navigate('/Login')}
           >
             Login
           </Button>
