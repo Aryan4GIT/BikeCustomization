@@ -1,7 +1,21 @@
 import React from 'react';
 import { Zap } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export const Header: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleSaveDesign = () => {
+    // Add your save logic here
+    console.log('Design saved');
+    
+    // Store message in localStorage or state management
+    localStorage.setItem('saveMessage', 'Your bike design has been saved!');
+    
+    // Redirect to home
+    window.location.href = '/';
+  };
+
   return (
     <header className="bg-black/30 backdrop-blur-md p-4 flex justify-between items-center border-b border-white/10">
       <div className="flex items-center gap-2">
@@ -12,7 +26,10 @@ export const Header: React.FC = () => {
       </div>
       
       <div className="flex gap-4">
-        <button className="px-4 py-2 rounded-md bg-blue-600 hover:bg-blue-700 transition-colors">
+        <button 
+          onClick={handleSaveDesign}
+          className="px-4 py-2 rounded-md bg-blue-600 hover:bg-blue-700 transition-colors"
+        >
           Save Design
         </button>
         <button className="px-4 py-2 rounded-md bg-green-600 hover:bg-green-700 transition-colors">
